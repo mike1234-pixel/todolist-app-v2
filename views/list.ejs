@@ -1,0 +1,37 @@
+<html>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>To Do List</title>
+      <link rel="stylesheet" type="text/css" href="css/styles.css" />
+      <link rel="icon"  href="Images\infinity-arrow-72-267822.png"/>
+    </head>
+    <body>
+      <div class="box" id="heading">
+        <h1><%= listTitle %></h1>
+      </div>
+
+      <div class="box">
+       
+          <!-- new input values are pushed into the newListItems array in app.js, here, that array is looped through and each index/list item is put into a li tag-->
+          <% newListItems.forEach(function(newListItem) { %>
+            <form action="/delete" method="post">
+            <div class="item">
+          <input type="checkbox" name="checkbox" value="<%=newListItem._id%>" onChange="this.form.submit()"> 
+          <p><%= newListItem.name %></p>
+            </div>
+            <input type="hidden" name="listName" value="<%=listTitle%>"></input>
+          </form>
+          <% }); %>
+
+          <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off"/>
+            <button type="submit" name="list" value=<%= listTitle %> >+</button>
+          </form>
+        
+
+    </body>
+  </html>
+</html>
