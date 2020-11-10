@@ -8,6 +8,7 @@ This is a simple to-do list application written in *Node.js*.
 
 - *Node.js* and *express.js*
 - *mongodb* and *mongoose*
+- views are written in *ejs* files (embedded javascript)
 
 ## User Stories
 
